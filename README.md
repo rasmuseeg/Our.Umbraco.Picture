@@ -39,3 +39,6 @@ Download ``picturefill.min.js`` from https://github.com/scottjehl/picturefill
     @Html.RenderPicture(picture);
 }
 ```
+
+# Our.Umbraco.Picture
+A extension library for generating HTML5 Picture element
