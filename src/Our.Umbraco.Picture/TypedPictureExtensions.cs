@@ -4,9 +4,6 @@ using Umbraco.Web;
 using System.Collections.Generic;
 using Umbraco.Core.Models;
 using Umbraco.Web.Models;
-using System.Text.RegularExpressions;
-using Umbraco.Core.Logging;
-using System.Globalization;
 
 namespace Our.Umbraco.Picture
 {

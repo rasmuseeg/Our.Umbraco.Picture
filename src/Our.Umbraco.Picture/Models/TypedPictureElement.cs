@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Umbraco.Core.Models;
-using Umbraco.Web;
+﻿using Umbraco.Web;
 using Umbraco.Web.Models;
+using Umbraco.Core.Models;
 
 namespace Our.Umbraco.Picture.Models
 {
@@ -14,7 +11,6 @@ namespace Our.Umbraco.Picture.Models
 
         private ImageCropMode ImageCropMode { get; set; }
 
-        #region Constructors
         public TypedPictureElement(IPublishedContent content, string propertyAlias = "umbracoFile", ImageCropMode imageCropMode = ImageCropMode.Crop)
             : base()
         {
@@ -25,7 +21,6 @@ namespace Our.Umbraco.Picture.Models
             Content = content;
             PropertyAlias = propertyAlias;
         }
-        #endregion
 
         public string GetCropUrl(int width, int? height, double? devicePixelRatio = null)
         {
