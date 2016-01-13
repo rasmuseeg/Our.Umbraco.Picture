@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Umbraco.Core.Models;
 
 namespace Our.Umbraco.Picture.Models
 {
