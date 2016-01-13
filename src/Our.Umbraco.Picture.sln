@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C4CA8866-94EA-4BE3-958F-0F44C0076389}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\Build-Release.ps1 = ..\build\Build-Release.ps1
+		..\build\Our.Umbraco.Picture.nuspec = ..\build\Our.Umbraco.Picture.nuspec
+		..\build\web.config.install.xdt = ..\build\web.config.install.xdt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Picture.Tests", "Our.Umbraco.Picture.Tests\Our.Umbraco.Picture.Tests.csproj", "{5E67B45A-EC1C-4A64-BB5D-17F87CFA7B66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Picture", "Our.Umbraco.Picture\Our.Umbraco.Picture.csproj", "{9405A347-38F3-4159-862D-82DFFE9E1DC0}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Our.Umbraco.Picture.Web", "Our.Umbraco.Picture.Web\", "{B3C94B68-3452-4FF0-AEEF-E7A3D9D9BA9A}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_22903"
+		Debug.AspNetCompiler.PhysicalPath = "Our.Umbraco.Picture.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22903\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_22903"
+		Release.AspNetCompiler.PhysicalPath = "Our.Umbraco.Picture.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_22903\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "22903"
+		SlnRelativePath = "Our.Umbraco.Picture.Web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E67B45A-EC1C-4A64-BB5D-17F87CFA7B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E67B45A-EC1C-4A64-BB5D-17F87CFA7B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E67B45A-EC1C-4A64-BB5D-17F87CFA7B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E67B45A-EC1C-4A64-BB5D-17F87CFA7B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9405A347-38F3-4159-862D-82DFFE9E1DC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9405A347-38F3-4159-862D-82DFFE9E1DC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9405A347-38F3-4159-862D-82DFFE9E1DC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9405A347-38F3-4159-862D-82DFFE9E1DC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C94B68-3452-4FF0-AEEF-E7A3D9D9BA9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C94B68-3452-4FF0-AEEF-E7A3D9D9BA9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C94B68-3452-4FF0-AEEF-E7A3D9D9BA9A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C94B68-3452-4FF0-AEEF-E7A3D9D9BA9A}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
