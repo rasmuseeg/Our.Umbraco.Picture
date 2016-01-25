@@ -7,15 +7,29 @@ namespace Our.Umbraco.Picture
     public static class VirtualPictureExtensions
     {
         #region Constructors
+        /// <summary>
+        /// Creates a new picture element with the specified virtual source to manipulate.
+        /// </summary>
+        /// <param name="helper"></param>
+        /// <param name="src"></param>
+        /// <returns></returns>
         public static VirtualPictureElement Picture(this UmbracoHelper helper, string src)
         {
+            // TODO: add logic to surfix with ~/
             return new VirtualPictureElement(src);
         }
         #endregion
 
         #region Linq
 
-        public static VirtualPictureElement Srcset(this VirtualPictureElement picture, int width, int? height)
+        /// <summary>
+        /// Adds src to picture img element
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static VirtualPictureElement Srcset(this VirtualPictureElement picture, int width, int? height = null)
         {
             string croppedUrl = string.Format("{0}?width={1}", picture.VirtualPath, width);
 
@@ -29,7 +43,15 @@ namespace Our.Umbraco.Picture
             return picture;
         }
 
-        public static VirtualPictureElement Srcset(this VirtualPictureElement picture, int width, int? height, params double[] devicePixelRatio)
+        /// <summary>
+        /// Adds src with Device pixel ratio to img element
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="devicePixelRatio"></param>
+        /// <returns></returns>
+        public static VirtualPictureElement Srcset(this VirtualPictureElement picture, int width, int? height = null, params double[] devicePixelRatio)
         {
             if (string.IsNullOrEmpty(picture.VirtualPath))
                 throw new System.ArgumentNullException("VirtualPath", "Missing VirtualPath from Picture. Use Umbraco.Picture(String)");
@@ -54,7 +76,15 @@ namespace Our.Umbraco.Picture
             return picture;
         }
 
-        public static VirtualPictureElement Source(this VirtualPictureElement picture, string media, int width, int? height)
+        /// <summary>
+        /// Adds new source child to picture element with media and srcset
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="media"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static VirtualPictureElement Source(this VirtualPictureElement picture, string media, int width, int? height = null)
         {
             if (string.IsNullOrEmpty(picture.VirtualPath))
                 throw new System.ArgumentNullException("VirtualPath", "Missing VirtualPath from Picture. Use Umbraco.Picture(IPublishedContent)");
@@ -75,6 +105,15 @@ namespace Our.Umbraco.Picture
             return picture;
         }
 
+        /// <summary>
+        /// Adds new source to child to picture element with media, srcset and device pixel ratio
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="media"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="devicePixelRatio"></param>
+        /// <returns></returns>
         public static VirtualPictureElement Source(this VirtualPictureElement picture, string media, int width, int? height, params double[] devicePixelRatio)
         {
             if (string.IsNullOrEmpty(picture.VirtualPath))

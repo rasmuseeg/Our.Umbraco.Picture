@@ -13,11 +13,22 @@ namespace Our.Umbraco.Picture
     public static class TypedPictureExtensions
     {
         #region Constructors
+        /// <summary>
+        /// Creates a new picture from an IPublishedContent to manipulate.
+        /// </summary>
+        /// <param name="helper"></param>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public static TypedPictureElement Picture(this UmbracoHelper helper, IPublishedContent content)
         {
             return new TypedPictureElement(content);
         }
 
+        /// <summary>
+        /// Creates a new picture from an IPublishedContent to manipulate.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public static TypedPictureElement Picture(this IPublishedContent content)
         {
             return new TypedPictureElement(content);
@@ -25,8 +36,14 @@ namespace Our.Umbraco.Picture
         #endregion
 
         #region Linq
-
-        public static TypedPictureElement Srcset(this TypedPictureElement picture, int width, int? height)
+        /// <summary>
+        /// Adds srcset to picture img elemet with specefied height and width.
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static TypedPictureElement Srcset(this TypedPictureElement picture, int width, int? height = null)
         {
             string croppedUrl = picture.Content.GetCropUrl(width: width, height: height, imageCropMode: ImageCropMode.Crop);
 
@@ -35,7 +52,15 @@ namespace Our.Umbraco.Picture
             return picture;
         }
 
-        public static TypedPictureElement Srcset(this TypedPictureElement picture, int width, int? height, params double[] devicePixelRatioArgs)
+        /// <summary>
+        /// Adds srcset to img with specified width, height and device pixel ratio.
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="devicePixelRatioArgs"></param>
+        /// <returns></returns>
+        public static TypedPictureElement Srcset(this TypedPictureElement picture, int width, int? height = null, params double[] devicePixelRatioArgs)
         {
             var srcsets = new List<string>();
             foreach (double devicePixelRatio in devicePixelRatioArgs)
@@ -49,7 +74,15 @@ namespace Our.Umbraco.Picture
             return picture;
         }
 
-        public static TypedPictureElement Source(this TypedPictureElement picture, string media, int width, int? height)
+        /// <summary>
+        /// Adds new source element with specified media, width and or height.
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="media"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
+        public static TypedPictureElement Source(this TypedPictureElement picture, string media, int width, int? height = null)
         {
             picture.Sources.Add(new SourceElement {
                 Media = media,
@@ -61,7 +94,16 @@ namespace Our.Umbraco.Picture
             return picture;
         }
 
-        public static TypedPictureElement Source(this TypedPictureElement picture, string media, int width, int? height, params double[] devicePixelRatioArgs)
+        /// <summary>
+        /// Adds new source element with specified media, width and or height, times following device pixel ratio's
+        /// </summary>
+        /// <param name="picture"></param>
+        /// <param name="media"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="devicePixelRatioArgs"></param>
+        /// <returns></returns>
+        public static TypedPictureElement Source(this TypedPictureElement picture, string media, int width, int? height = null, params double[] devicePixelRatioArgs)
         {
             if (picture.Content == null)
                 throw new System.ArgumentNullException("Content", "Missing Content from Picture. Use Umbraco.Picture(IPublishedContent)");
