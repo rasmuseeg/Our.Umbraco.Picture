@@ -21,7 +21,6 @@ namespace Our.Umbraco.Picture
         #endregion
 
         #region Linq
-
         /// <summary>
         /// Adds src to picture img element
         /// </summary>
@@ -34,7 +33,7 @@ namespace Our.Umbraco.Picture
             string croppedUrl = string.Format("{0}?width={1}", picture.VirtualPath, width);
 
             if (height.HasValue)
-                croppedUrl += "?" + height.Value;
+                croppedUrl += "&height=" + height.Value;
 
             croppedUrl += "&mode=crop";
 
@@ -65,7 +64,7 @@ namespace Our.Umbraco.Picture
                 string croppedUrl = string.Format("{0}?width={1}", picture.VirtualPath, newWidth);
 
                 if (newHeight.HasValue)
-                    croppedUrl += "?" + newHeight.Value;
+                    croppedUrl += "&height=" + newHeight.Value;
 
                 croppedUrl += "&mode=crop";
                 croppedUrl += " x" + string.Format("{0:0.##}", ratio).Replace(',', '.');
@@ -92,7 +91,7 @@ namespace Our.Umbraco.Picture
             string croppedUrl = string.Format("{0}?width={1}", picture.VirtualPath, width);
 
             if (height.HasValue)
-                croppedUrl += "?" + height.Value;
+                croppedUrl += "&height=" + height.Value;
 
             croppedUrl += "&mode=crop";
 
