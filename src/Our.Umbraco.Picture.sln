@@ -1,12 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25029.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C4CA8866-94EA-4BE3-958F-0F44C0076389}"
 	ProjectSection(SolutionItems) = preProject
 		..\build\BuildRelease.ps1 = ..\build\BuildRelease.ps1
 		..\build\Our.Umbraco.Picture.nuspec = ..\build\Our.Umbraco.Picture.nuspec
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Picture", "Our.Umbraco.Picture\Our.Umbraco.Picture.csproj", "{9405A347-38F3-4159-862D-82DFFE9E1DC0}"
