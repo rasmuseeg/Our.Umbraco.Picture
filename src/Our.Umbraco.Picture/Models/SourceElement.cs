@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Our.Umbraco.Picture.Models
 {
@@ -10,9 +12,18 @@ namespace Our.Umbraco.Picture.Models
 
         public string Type { get; set; }
 
+        public string Sizes { get; set; }
+
         public override string ToString()
         {
-            return string.Format("<source media=\"{0}\" srcset=\"{1}\">", this.Media, string.Join(",", this.Srcset));
+            var tagBuilder = new TagBuilder("source");
+            tagBuilder.MergeAttribute("media", this.Media);
+            tagBuilder.MergeAttribute("srcset", string.Join(",", this.Srcset));
+            if (!String.IsNullOrEmpty(this.Sizes))
+            {
+                tagBuilder.MergeAttribute("sizes", this.Sizes);
+            }
+            return tagBuilder.ToString();
         }
 
         #region contructors

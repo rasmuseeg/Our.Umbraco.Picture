@@ -13,5 +13,7 @@ namespace Our.Umbraco.Picture.Models
         string Media { get; set; }
 
         string Type { get; set; }
+
+        string Sizes { get; set; }
     }
 }
