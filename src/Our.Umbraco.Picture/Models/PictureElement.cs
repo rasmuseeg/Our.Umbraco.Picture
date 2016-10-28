@@ -83,7 +83,7 @@ namespace Our.Umbraco.Picture.Models
 
             if(this.IE8) sb.Append("<!--[if IE 9]></video><![endif]-->");
             
-            sb.AppendFormat("<img src={0} srcset=\"{1}\" alt=\"{2}\" />", this.Src, string.Join(",", this.Srcset), this.Alt);
+            sb.AppendFormat("<img src=\"{0}\" srcset=\"{1}\" alt=\"{2}\" />", this.Src, string.Join(",", this.Srcset), this.Alt);
 
             return sb.ToString();
         }
